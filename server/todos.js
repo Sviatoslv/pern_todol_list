@@ -55,6 +55,8 @@ router.put('/todos/:id', async (req, res) => {
 });
 
 router.delete('/todos/:id', async (res, req) => {
+  console.log('DELETE', res.params);
+
   try {
     const { id } = res.params;
     const deletedTodo = await pool.query(
